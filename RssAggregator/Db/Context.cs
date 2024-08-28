@@ -4,7 +4,6 @@ namespace RssAggregator.Db;
 
 public class Context : DbContext
 {
-
     public DbSet<AppUser> Users { get; set; }
 
     public Context(DbContextOptions<Context> options) : base(options)
@@ -27,4 +26,6 @@ public class AppUser
 {
     public Guid Id { get; set; }
     public string Email { get; set; }
+    public string Password { get; set; }
+    public string Role { get; set; }
 }
