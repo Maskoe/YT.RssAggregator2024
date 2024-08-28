@@ -5,10 +5,11 @@ namespace RssAggregator.Db;
 public class Context : DbContext
 {
     public DbSet<AppUser> Users { get; set; }
+    public DbSet<Feed> Feeds { get; set; }
+    public DbSet<Post> Posts { get; set; }
 
     public Context(DbContextOptions<Context> options) : base(options)
     {
-        
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,4 +29,26 @@ public class AppUser
     public string Email { get; set; }
     public string Password { get; set; }
     public string Role { get; set; }
+}
+
+public class Feed
+{
+    public Guid Id { get; set; }
+    public string Name { get; set; }
+    public string Url { get; set; }
+    public DateTime? LastFetchedAt { get; set; }
+
+    public List<Post> Posts { get; set; } = new();
+}
+
+public class Post
+{
+    public Guid Id { get; set; }
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public DateTime PublishedAt { get; set; }
+    public string Url { get; set; }
+
+    public Guid FeedId { get; set; }
+    public Feed Feed { get; set; }
 }

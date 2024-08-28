@@ -14,6 +14,7 @@ bld.Services.AddAuthorization();
 bld.Services.AddDbContextFactory<Context>(options =>
 {
     options.UseNpgsql("User ID=postgres; Password=postgres; Database=ytRss2; Server=localhost; Port=5432; Include Error Detail=true;");
+    options.EnableSensitiveDataLogging();
 });
 
 var app = bld.Build();
