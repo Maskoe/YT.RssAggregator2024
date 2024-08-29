@@ -1,8 +1,9 @@
-using FastEndpoints;
+global using FastEndpoints;
+global using Microsoft.EntityFrameworkCore;
+global using RssAggregator.Db;
+
 using FastEndpoints.Security;
 using FastEndpoints.Swagger;
-using Microsoft.EntityFrameworkCore;
-using RssAggregator.Db;
 
 var bld = WebApplication.CreateBuilder();
 bld.Services.AddFastEndpoints();
