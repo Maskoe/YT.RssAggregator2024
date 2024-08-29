@@ -41,5 +41,4 @@ var reccuringJobs = sp.GetRequiredService<IRecurringJobManager>();
 // await syncJob.FetchSingleFeed(Guid.Parse("2408ffc3-48f5-449b-8a3b-309069a96f40"));
 reccuringJobs.AddOrUpdate("sync-feeds-concurrently", () => syncJob.FetchAllFeeds(), Cron.Minutely);
 
-
 app.Run();
