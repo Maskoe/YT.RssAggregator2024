@@ -1,6 +1,6 @@
 # Rss Feed Aggregator
 This is a project to showcase FastEndpoints and a minimal Vertical Slice Architecture.  
-This repository is to accompany this youtube video:
+This repository is to accompany this youtube video: https://youtu.be/-OWj0MrjYMo
 
 If you're coming here from [breakneck](https://breakneck.dev), this will give you a good idea of the style.
 
